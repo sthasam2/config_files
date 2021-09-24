@@ -109,11 +109,22 @@ source $ZSH/oh-my-zsh.sh
 ###                 CUSTOM                    ###
 #################################################
 
-# ~/.bashrc Starship
-eval "$(starship init zsh)"
-
 # BASH
 export PATH=/usr/bin:/bin:$PATH
+
+# -----------------------
+# |       SHELL         |
+# -----------------------
+
+## PROMPTS
+
+# export PS1="\n┌─[\[\e[32;40m\]\@\[\e[m\]][\[\e[34;40m\]\u\[\e[m\]\[\e[33;40m\]@\[\e[m\]\[\e[36;40m\]\h\[\e[m\]][\[\e[40m\]\s\[\e[m\]\[\e[40m\]:\[\e[m\]\[\e[40m\] \[\e[m\]\[\e[40m\]\w\[\e[m\]]\n└─▪ "
+
+# PROMPT
+# PS1="\[\033[3;30m\033[1;31m\u@\h \033[1;31m: \033[1;34m\w\n\033[1;32m$ \033[0;32m\]"
+
+# ~/.zshrc Starship
+eval "$(starship init zsh)"
 
 # Ranger
 export RANGER_LOAD_DEFAULT_RC=FALSE
@@ -121,14 +132,29 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 # CHROMIUM INSTANCE
 # export CHROME_EXECUTABLE=/usr/bin/brave-browser:$PATH
 
-# FLUTTER
-export PATH=$HOME/Android/flutter/bin:$PATH
+# -----------------------
+# |      ANDROID        |
+# -----------------------
 
 # ANDROID
-export ANDROID_HOME=$HOME/Android
-export ANDROID_SDK_ROOT=$ANDROID_HOME/sdk
-export PATH=$ANDROID_SDK_ROOT/tools/bin:$PATH
+export ANDROID_HOME=$HOME/Programming/Libraries/Android
+export PATH=$ANDROID_HOME/sdk/cmdline-tools/tools:$PATH
 
+# ANDROID SDK
+export ANDROID_SDK_ROOT=$ANDROID_HOME/sdk
+export PATH=$ANDROID_SDK_ROOT:$PATH
+export PATH=$ANDROID_SDK_ROOT/cmdline-tools/tools/bin:$PATH
+
+#  PLATFORM TOOLS
+export ANDROID_PLATFORM_TOOLS=$ANDROID_SDK_ROOT/platform-tools
+export PATH=$ANDROID_PLATFORM_TOOLS:$PATH
+
+# FLUTTER
+# export PATH=$HOME/Android/flutter/bin:$PATH
+
+# -----------------------
+# |         PYTHON      |
+# -----------------------
 
 # PYTHON
 export PATH=$HOME/.local/bin:$PATH
@@ -138,21 +164,25 @@ alias pym="python3 manage.py"
 alias poadd="poetry add"
 alias vact="source .venv/bin/activate"
 
-# NGROK
-alias ngrok=$HOME/Programming/ngrok
-
-# export PS1="\n┌─[\[\e[32;40m\]\@\[\e[m\]][\[\e[34;40m\]\u\[\e[m\]\[\e[33;40m\]@\[\e[m\]\[\e[36;40m\]\h\[\e[m\]][\[\e[40m\]\s\[\e[m\]\[\e[40m\]:\[\e[m\]\[\e[40m\] \[\e[m\]\[\e[40m\]\w\[\e[m\]]\n└─▪ "
-
-# PROMPT
-# PS1="\[\033[3;30m\033[1;31m\u@\h \033[1;31m: \033[1;34m\w\n\033[1;32m$ \033[0;32m\]"
+# -----------------------
+# |         JAVA        |
+# -----------------------
 
 # JAVA
 # export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 # export PATH=$JAVA_HOME/bin:$PATH
 
+# -----------------------
+# |         MISC        |
+# -----------------------
+
+# NGROK
+alias ngrok=$HOME/Programming/ngrok
+
 # DIRENV
 eval "$(direnv hook zsh)"
 
+# Poetry
 export PATH="$HOME/.poetry/bin:$PATH"
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -170,8 +200,3 @@ export PATH="$HOME/.poetry/bin:$PATH"
 # if [[ -z ${chpwd_functions[(r)_direnv_hook]} ]]; then
 #   chpwd_functions=( _direnv_hook ${chpwd_functions[@]} )
 # fi"
-
-export fastboot="/home/sthasam/Android/sdk/platform-tools/fastboot"
-export adb="/home/sthasam/Android/sdk/platform-tools/adb"
-
-export PATH=$HOME/Android/sdk/platform-tools:$PATH
