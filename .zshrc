@@ -1,4 +1,4 @@
-        # If you come from bash you might have to change your $PATH.
+# If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -130,7 +130,8 @@ eval "$(starship init zsh)"
 export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # CHROMIUM INSTANCE
-# export CHROME_EXECUTABLE=/usr/bin/brave-browser:$PATH
+export CHROME_EXECUTABLE=/usr/bin/brave-browser
+export PATH=$CHROME_EXECUTABLE:$PATH
 
 # -----------------------
 # |      ANDROID        |
@@ -138,16 +139,22 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # ANDROID
 export ANDROID_HOME=$HOME/Programming/Libraries/Android
-export PATH=$ANDROID_HOME/sdk/cmdline-tools/tools:$PATH
+export PATH=$ANDROID_HOME/cmdline-tools:$PATH
 
 # ANDROID SDK
-export ANDROID_SDK_ROOT=$ANDROID_HOME/sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$ANDROID_SDK_ROOT:$PATH
-export PATH=$ANDROID_SDK_ROOT/cmdline-tools/tools/bin:$PATH
+export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$PATH
 
 #  PLATFORM TOOLS
 export ANDROID_PLATFORM_TOOLS=$ANDROID_SDK_ROOT/platform-tools
 export PATH=$ANDROID_PLATFORM_TOOLS:$PATH
+
+# EMULATOR
+export ANDROID_EMULATOR=$ANDROID_SDK_ROOT/emulator
+export PATH=$ANDROID_EMULATOR:$PATH
+
+alias runemu="emulator @Google_Pixel_5"
 
 # FLUTTER
 # export PATH=$HOME/Android/flutter/bin:$PATH
@@ -164,7 +171,6 @@ alias pym="python3 manage.py"
 alias poadd="poetry add"
 alias vact="source .venv/bin/activate"
 
-
 # -----------------------
 # |         GO          |
 # -----------------------
@@ -176,8 +182,8 @@ export PATH=$PATH:/usr/local/go/bin
 # -----------------------
 
 # JAVA
-# export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
-# export PATH=$JAVA_HOME/bin:$PATH
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
 
 # -----------------------
 # |         MISC        |
