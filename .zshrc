@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+        # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -163,6 +163,13 @@ alias py=python3
 alias pym="python3 manage.py"
 alias poadd="poetry add"
 alias vact="source .venv/bin/activate"
+
+
+# -----------------------
+# |         GO          |
+# -----------------------
+
+export PATH=$PATH:/usr/local/go/bin
 
 # -----------------------
 # |         JAVA        |
